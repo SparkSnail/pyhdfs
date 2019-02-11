@@ -428,7 +428,6 @@ class HdfsClient(object):
         """
         metadata_response = self._put(
             path, 'CREATE', expected_status=httplib.TEMPORARY_REDIRECT, **kwargs)
-        assert not metadata_response.content
         data_response = self._requests_session.put(
             metadata_response.headers['location'], data=data, **self._requests_kwargs)
         _check_response(data_response, expected_status=httplib.CREATED)
