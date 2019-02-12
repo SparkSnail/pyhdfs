@@ -50,7 +50,7 @@ except NameError:  # pragma: no cover
 DEFAULT_PORT = 50070
 WEBHDFS_PATH = '/webhdfs/v1'
 
-__version__ = '0.2.1'
+__version__ = '0.2.3'
 _logger = logging.getLogger(__name__)
 
 
@@ -560,7 +560,6 @@ class HdfsClient(object):
         """
         metadata_response = self._get(
             path, 'GETFILECHECKSUM', expected_status=httplib.TEMPORARY_REDIRECT, **kwargs)
-        assert not metadata_response.content
         data_response = self._requests_session.get(
             metadata_response.headers['location'], **self._requests_kwargs)
         _check_response(data_response)

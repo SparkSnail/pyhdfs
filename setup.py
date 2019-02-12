@@ -28,13 +28,12 @@ with open(os.path.join(os.path.dirname(__file__), 'dev_requirements.txt')) as de
     tests_require = dev_requirements.read().splitlines()
 
 setup(
-    name="PyHDFS",
+    name="PythonWebHDFS",
     version=version,
-    description="Pure Python HDFS client",
+    description="Customized Python Web HDFS client",
     long_description=long_description,
-    url='https://github.com/jingw/pyhdfs',
-    author="Jing Wang",
-    author_email="jingwang13@gmail.com",
+    author="SparkSnail",
+    author_email="noreplay@gmail.com",
     license="MIT License",
     py_modules=['pyhdfs'],
     classifiers=[
